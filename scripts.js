@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-            
-            // Map configuration nodes utilizing strict company brand guidelines with custom textpositions to avoid overlap
+
+// Map configuration nodes utilizing strict company brand guidelines with custom textpositions to avoid overlap
             const locations = [
-                {            
+                {
                     name: 'Corporate HQ & Manufacturing Campus',
                     city: 'Jeannette, Pennsylvania (USA)',
                     lat: 40.32,
                     lon: -79.61,
                     type: 'HQ',
-                    color: '#ED174F', // Elliott Red
+                    color: '#ED174F',
                     size: 20,
                     textposition: 'top right', // Offset to prevent collision with Donora
                     details: 'Large customized turbine & compressor production; 13-acre cryogenic testing campus.'
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     lat: 35.53,
                     lon: 140.00,
                     type: 'HQ',
-                    color: '#ED174F', // Elliott Red
+                    color: '#ED174F',
                     size: 18,
                     textposition: 'top center',
                     details: 'Primary Japanese turbomachinery production, advanced engineering hub.'
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     lat: 12.97,
                     lon: 77.59,
                     type: 'Mfg',
-                    color: '#007F53', // Elliott Green
+                    color: '#007F53',
                     size: 16,
                     textposition: 'top center',
                     details: 'World-class 5,000 sqm YR steam turbine manufacturing & mechanical test loop.'
@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     lat: 40.18,
                     lon: -79.85,
                     type: 'Mfg',
-                    color: '#007F53', // Elliott Green
+                    color: '#007F53',
                     size: 14,
-                    textposition: 'bottom left', // Offset to prevent collision with Jeannette
+                    textposition: 'bottom left', // Offset
                     details: 'Specialized manufacturing facility for key seat and spherical seat tilting pad bearings.'
                 },
                 {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     lat: 51.35,
                     lon: -1.08,
                     type: 'Support',
-                    color: '#EAAA21', // Elliott Yellow
+                    color: '#EAAA21',
                     size: 13,
                     textposition: 'top left', // Offset to prevent collision with Basingstoke
                     details: 'Strategic aftermarket distribution center serving Europe, Middle East, and Africa.'
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     lat: 29.97,
                     lon: -90.37,
                     type: 'Support',
-                    color: '#EAAA21', // Elliott Yellow
+                    color: '#EAAA21',
                     size: 13,
                     textposition: 'bottom center', // Offset from Houston
                     details: 'Hands-on instruction center for operators and maintenance personnel.'
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     lat: 29.76,
                     lon: -95.36,
                     type: 'Support',
-                    color: '#EAAA21', // Elliott Yellow
+                    color: '#EAAA21',
                     size: 14,
                     textposition: 'top left', // Offset from Harahan
                     details: 'Climate-controlled vertical rotor storage for units up to 40,000 lbs; drone inventory checks.'
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     lat: 51.26,
                     lon: -1.08,
                     type: 'Repair',
-                    color: '#2D2926', // Elliott Black
+                    color: '#2D2926',
                     size: 13,
                     textposition: 'bottom right', // Offset to prevent collision with Silchester
                     details: 'Company’s historic first international support services hub opened outside the US.'
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     lat: 39.12,
                     lon: 117.20,
                     type: 'Repair',
-                    color: '#2D2926', // Elliott Black
+                    color: '#2D2926',
                     size: 13,
                     textposition: 'top center',
                     details: 'Strategic ISO 9001 and 14001 certified repair operations serving China and East Asia.'
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     lat: 26.28,
                     lon: 50.21,
                     type: 'Repair',
-                    color: '#2D2926', // Elliott Black
+                    color: '#2D2926',
                     size: 14,
                     textposition: 'top center',
                     details: 'Major localized technical service and repair center supporting regional petrochemical operations.'
@@ -125,18 +125,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 textfont: {
                     family: 'Inter, sans-serif',
                     size: 10,
-                    color: '#2D2926', // Elliott Black text
+                    color: '#2D2926',
                     weight: 600
                 },
                 hoverinfo: 'text',
                 hovertext: locations.map(loc => `<span style="font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 800; color: #003DA5;">${loc.name}</span><br><span style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: #898D8D;">${loc.city}</span><br><br><span style="font-family: 'Inter', sans-serif; font-size: 11px; color: #2D2926; line-height: 1.4;">${loc.details}</span>`),
                 hoverlabel: {
-                    bgcolor: '#FFFFFF', // Clean White background card
-                    bordercolor: '#003DA5', // Elliott Blue outline
+                    bgcolor: '#FFFFFF', 
+                    bordercolor: '#003DA5',
                     font: {
                         family: 'Inter, sans-serif',
                         size: 11,
-                        color: '#2D2926' // Elliott Black text
+                        color: '#2D2926' 
                     },
                     align: 'left'
                 },
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     size: locations.map(loc => loc.size),
                     color: locations.map(loc => loc.color),
                     line: {
-                        color: '#FFFFFF', // Elliott White shell
+                        color: '#FFFFFF',
                         width: 2
                     },
                     opacity: 0.95
@@ -186,58 +186,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 displayModeBar: false
             });
             
-            // Automated scrolling horizontal loops engine parameters
-            let currentLon = 0;
-            let isAutoScrolling = true;
-            let scrollInterval;
-            const mapElement = document.getElementById('globalMap');
-            const toggleButton = document.getElementById('scrollToggle');
-            
-            function startAutoScroll() {
-                if (scrollInterval) clearInterval(scrollInterval);
-                scrollInterval = setInterval(function() {
-                    if (isAutoScrolling) {
-                        currentLon = (currentLon + 0.35);
-                        if (currentLon > 180) currentLon = -180; // Bound tracking reset loop
-                        
-                        Plotly.relayout('globalMap', {
-                            'geo.center.lon': currentLon
-                        });
-                    }
-                }, 50); // Refresh pacing for buttery frame delivery
-            }
-            
-            function stopAutoScroll() {
-                isAutoScrolling = false;
-                toggleButton.innerHTML = "Paused Orbit";
-                toggleButton.style.backgroundColor = "#898D8D";
-            }
-            
-            function resumeAutoScroll() {
-                isAutoScrolling = true;
-                toggleButton.innerHTML = "Active Orbit";
-                toggleButton.style.backgroundColor = "#003DA5";
-            }
-            
-            // Hook operational canvas interaction callbacks to freeze the window movement during analysis
-            mapElement.addEventListener('pointerdown', stopAutoScroll);
-            mapElement.addEventListener('willchange', stopAutoScroll);
-            
-            // Allow manual toggle via control box
-            toggleButton.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (isAutoScrolling) {
-                    stopAutoScroll();
-                } else {
-                    resumeAutoScroll();
-                }
-            });
-            
-            // Launch tracking loop
-            startAutoScroll();
-            
             // Resize alignment handler
             window.addEventListener('resize', function() {
                 Plotly.Plots.resize(document.getElementById('globalMap'));
+            });
+            
+            // Setup Collapsible Panel Logic
+            const infoPanel = document.getElementById('infoPanel');
+            const panelHeader = document.getElementById('panelHeader');
+            const collapseChevron = document.getElementById('collapseChevron');
+            
+            // Responsive default configuration: Collapse overlay on mobile by default to prevent map obstruction
+            if (window.innerWidth < 768) {
+                infoPanel.classList.add('collapsed');
+                collapseChevron.style.transform = 'rotate(180deg)';
+            }
+            
+            panelHeader.addEventListener('click', function() {
+                const isCollapsed = infoPanel.classList.toggle('collapsed');
+                
+                // Animate chevron rotation
+                if (isCollapsed) {
+                    collapseChevron.style.transform = 'rotate(180deg)';
+                } else {
+                    collapseChevron.style.transform = 'rotate(0deg)';
+                }
             });
 });
