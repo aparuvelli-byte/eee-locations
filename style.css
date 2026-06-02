@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-        
-body {
+
+body, html {
     font-family: 'Inter', sans-serif;
-    background-color: #FFFFFF;
+    background-color: #F0F4FA; /* Unified base background to eliminate dead-space borders */
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -24,7 +24,7 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: #FFFFFF;
+    background: #F0F4FA;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
