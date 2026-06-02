@@ -190,26 +190,4 @@ document.addEventListener('DOMContentLoaded', function() {
             window.addEventListener('resize', function() {
                 Plotly.Plots.resize(document.getElementById('globalMap'));
             });
-
-            // Setup Collapsible Panel Logic
-            const infoPanel = document.getElementById('infoPanel');
-            const panelHeader = document.getElementById('panelHeader');
-            const collapseChevron = document.getElementById('collapseChevron');
-
-            // Responsive default configuration: Collapse overlay on mobile by default to prevent map obstruction
-            if (window.innerWidth < 768) {
-                infoPanel.classList.add('collapsed');
-                collapseChevron.style.transform = 'rotate(180deg)';
-            }
-
-            panelHeader.addEventListener('click', function() {
-                const isCollapsed = infoPanel.classList.toggle('collapsed');
-                
-                // Animate chevron rotation
-                if (isCollapsed) {
-                    collapseChevron.style.transform = 'rotate(180deg)';
-                } else {
-                    collapseChevron.style.transform = 'rotate(0deg)';
-                }
-            });
         });
