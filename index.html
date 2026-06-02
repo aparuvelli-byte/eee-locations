@@ -4,62 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ebara Elliott Energy - Global Asset Footprint</title>
+    
+    <!-- 3rd Party CDNs -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
-
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Upper Information Overlay Panel -->
-    <div class="absolute top-4 left-4 z-50 bg-white/95 backdrop-blur-md border border-[#898D8D]/30 p-5 rounded-xl shadow-2xl max-w-sm pointer-events-auto transition-all duration-300">
-        <div class="flex items-center space-x-2">
-            <div class="w-2.5 h-6 bg-[#003DA5] rounded-sm"></div>
-            <h1 class="text-base font-extrabold text-[#2D2926] tracking-tight uppercase">Global Asset Footprint</h1>
-        </div>
-        <p class="text-xs text-[#2D2926]/80 mt-2 leading-relaxed">Interactive tracking matrix of corporate properties, manufacturing centers, and specialized repair hubs.</p>
+    <div id="infoPanel" class="absolute top-2 left-2 md:top-4 md:left-4 z-50 bg-white/95 backdrop-blur-md border border-[#898D8D]/30 rounded-xl shadow-2xl max-w-[calc(100vw-1rem)] sm:max-w-sm pointer-events-auto transition-all duration-300">
         
-        <div class="mt-4 space-y-2.5 border-t border-[#898D8D]/20 pt-4">
-            <div class="flex items-center text-xs text-[#2D2926] font-semibold">
-                <span class="w-3.5 h-3.5 rounded-full bg-[#ED174F] mr-3 ring-4 ring-[#ED174F]/15 flex items-center justify-center text-[9px] text-white font-bold">H</span>
-                <span>Engineering & HQ Hubs</span>
+        <!-- Collapsible Header Box -->
+        <div id="panelHeader" class="flex items-center justify-between p-4 md:p-5 cursor-pointer select-none">
+            <div class="flex items-center space-x-2">
+                <div class="w-2.5 h-6 bg-[#003DA5] rounded-sm"></div>
+                <h1 class="text-sm md:text-base font-extrabold text-[#2D2926] tracking-tight uppercase">Global Asset Footprint</h1>
             </div>
-            <div class="flex items-center text-xs text-[#2D2926] font-semibold">
-                <span class="w-3.5 h-3.5 rounded-full bg-[#007F53] mr-3 ring-4 ring-[#007F53]/15 flex items-center justify-center text-[9px] text-white font-bold">M</span>
-                <span>Specialized Manufacturing</span>
-            </div>
-            <div class="flex items-center text-xs text-[#2D2926] font-semibold">
-                <span class="w-3.5 h-3.5 rounded-full bg-[#EAAA21] mr-3 ring-4 ring-[#EAAA21]/15 flex items-center justify-center text-[9px] text-white font-bold">S</span>
-                <span>Storage, Depots & Training</span>
-            </div>
-            <div class="flex items-center text-xs text-[#2D2926] font-semibold">
-                <span class="w-3.5 h-3.5 rounded-full bg-[#2D2926] mr-3 ring-4 ring-[#2D2926]/15 flex items-center justify-center text-[9px] text-white font-bold">R</span>
-                <span>International Repair Centers</span>
-            </div>
+            
+            <!-- Rotate Icon based on state -->
+            <span id="collapseChevron" class="w-5 h-5 flex items-center justify-center transition-transform duration-300 transform">
+                <svg class="w-4 h-4 text-[#2D2926]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </span>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-[#898D8D]/10 flex justify-between items-center">
-            <span class="text-[10px] text-[#898D8D] uppercase font-bold tracking-wider">Auto-Scroll State</span>
-            <button id="scrollToggle" class="px-2.5 py-1 text-[10px] font-bold rounded bg-[#003DA5] text-white shadow-sm hover:opacity-90 transition-opacity">
-                Active Orbit
-            </button>
+        <!-- Collapsible Body Panel Content -->
+        <div id="panelContent" class="px-5 pb-5">
+            <p class="text-xs text-[#2D2926]/80 leading-relaxed">Interactive tracking matrix of corporate properties, manufacturing centers, and specialized repair hubs.</p>
+            
+            <div class="mt-4 space-y-2.5 border-t border-[#898D8D]/20 pt-4">
+                <div class="flex items-center text-xs text-[#2D2926] font-semibold">
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#ED174F] mr-3 ring-4 ring-[#ED174F]/15 flex items-center justify-center text-[9px] text-white font-bold">H</span>
+                    <span>Engineering & HQ Hubs</span>
+                </div>
+                <div class="flex items-center text-xs text-[#2D2926] font-semibold">
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#007F53] mr-3 ring-4 ring-[#007F53]/15 flex items-center justify-center text-[9px] text-white font-bold">M</span>
+                    <span>Specialized Manufacturing</span>
+                </div>
+                <div class="flex items-center text-xs text-[#2D2926] font-semibold">
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#EAAA21] mr-3 ring-4 ring-[#EAAA21]/15 flex items-center justify-center text-[9px] text-white font-bold">S</span>
+                    <span>Storage, Depots & Training</span>
+                </div>
+                <div class="flex items-center text-xs text-[#2D2926] font-semibold">
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#2D2926] mr-3 ring-4 ring-[#2D2926]/15 flex items-center justify-center text-[9px] text-white font-bold">R</span>
+                    <span>International Repair Centers</span>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Floating Fleet Metric Scoreboard Dashboard -->
-    <div class="absolute bottom-4 left-4 z-50 bg-white/95 backdrop-blur-md border border-[#898D8D]/30 p-4 rounded-xl shadow-2xl max-w-md pointer-events-auto hidden md:block">
+    <div class="absolute bottom-2 left-2 md:bottom-4 md:left-4 z-50 bg-white/95 backdrop-blur-md border border-[#898D8D]/30 p-4 rounded-xl shadow-2xl max-w-[calc(100vw-1rem)] md:max-w-md pointer-events-auto hidden sm:block">
         <h2 class="text-[10px] font-extrabold text-[#898D8D] uppercase tracking-widest">Operational Fleet Scale Overview</h2>
-        <div class="grid grid-cols-3 gap-4 mt-2 border-t border-[#898D8D]/20 pt-3">
-            <div class="border-r border-[#898D8D]/10 pr-2">
-                <div class="text-base font-extrabold text-[#003DA5]">40,000+</div>
+        <div class="grid grid-cols-3 gap-3 md:gap-4 mt-2 border-t border-[#898D8D]/20 pt-3">
+            <div class="border-r border-[#898D8D]/10 pr-1 md:pr-2">
+                <div class="text-sm md:text-base font-extrabold text-[#003DA5]">40,000+</div>
                 <div class="text-[9px] text-[#2D2926] font-semibold leading-tight mt-0.5">YR Turbines Active Globally</div>
             </div>
-            <div class="border-r border-[#898D8D]/10 pr-2">
-                <div class="text-base font-extrabold text-[#ED174F]">700+</div>
+            <div class="border-r border-[#898D8D]/10 pr-1 md:pr-2">
+                <div class="text-sm md:text-base font-extrabold text-[#ED174F]">700+</div>
                 <div class="text-[9px] text-[#2D2926] font-semibold leading-tight mt-0.5">Compressors in Ethylene Service</div>
             </div>
             <div>
-                <div class="text-base font-extrabold text-[#007F53]">35,000+</div>
+                <div class="text-sm md:text-base font-extrabold text-[#007F53]">35,000+</div>
                 <div class="text-[9px] text-[#2D2926] font-semibold leading-tight mt-0.5">Active Steam Turbine Generators</div>
             </div>
         </div>
@@ -67,7 +75,5 @@
 
     <!-- Map Container Target Element -->
     <div id="globalMap"></div>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
