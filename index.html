@@ -64,74 +64,239 @@
                     type: 'HQ',
                     color: '#ED174F', // Elliott Red
                     size: 20,
-                    textposition: 'top right', // Offset to prevent collision with Donora
+                    textposition: 'top right',
                     details: 'Large customized turbine & compressor production; 13-acre cryogenic testing campus.'
                 },
                 {
-                    name: 'Design & Manufacturing Center',
+                    name: 'Design, Manufacturing & Service Center',
                     city: 'Sodegaura, Chiba (Japan)',
                     lat: 35.53,
                     lon: 140.00,
                     type: 'HQ',
-                    color: '#ED174F', // Elliott Red
+                    color: '#ED174F', // Elliott Red (Retained HQ status priority)
                     size: 18,
                     textposition: 'top center',
-                    details: 'Primary Japanese turbomachinery production, advanced engineering hub.'
+                    details: 'Primary Japanese turbomachinery production, advanced engineering hub, and regional service operations. Tel: 81.4.3860.6111'
                 },
                 {
-                    name: 'South Asian Turbine Assembly Plant',
-                    city: 'Bengaluru (India)',
-                    lat: 12.97,
-                    lon: 77.59,
-                    type: 'Mfg',
-                    color: '#007F53', // Elliott Green
-                    size: 16,
-                    textposition: 'top center',
-                    details: 'World-class 5,000 sqm YR steam turbine manufacturing & mechanical test loop.'
-                },
-                {
-                    name: 'Bearing Manufacturing Center',
-                    city: 'Donora, Pennsylvania (USA)',
-                    lat: 40.18,
-                    lon: -79.85,
-                    type: 'Mfg',
-                    color: '#007F53', // Elliott Green
+                    name: 'Baton Rouge Service Center',
+                    city: 'Plaquemine, Louisiana (USA)',
+                    lat: 30.29,
+                    lon: -91.23,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
                     size: 14,
-                    textposition: 'bottom left', // Offset to prevent collision with Jeannette
-                    details: 'Specialized manufacturing facility for key seat and spherical seat tilting pad bearings.'
+                    textposition: 'top left',
+                    details: '58035 Industrial Blvd. Regional turbomachinery repairs and overhauls. Tel: 225.687.1717'
                 },
                 {
-                    name: 'Global Parts Distribution Depot',
-                    city: 'Silchester (UK)',
-                    lat: 51.35,
-                    lon: -1.08,
-                    type: 'Support',
-                    color: '#EAAA21', // Elliott Yellow
-                    size: 13,
-                    textposition: 'top left', // Offset to prevent collision with Basingstoke
-                    details: 'Strategic aftermarket distribution center serving Europe, Middle East, and Africa.'
+                    name: 'Chicago Service Center',
+                    city: 'Crown Point, Indiana (USA)',
+                    lat: 41.42,
+                    lon: -87.37,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top right',
+                    details: '1301 N. Indiana Avenue. Dedicated Midwest industrial maintenance operations. Tel: 219.661.9701'
                 },
                 {
-                    name: 'Technical Training Center',
-                    city: 'Harahan, Louisiana (USA)',
-                    lat: 29.97,
-                    lon: -90.37,
-                    type: 'Support',
-                    color: '#EAAA21', // Elliott Yellow
-                    size: 13,
-                    textposition: 'bottom center', // Offset from Houston
-                    details: 'Hands-on instruction center for operators and maintenance personnel.'
+                    name: 'Edmonton Service Center',
+                    city: 'Edmonton, Alberta (Canada)',
+                    lat: 53.52,
+                    lon: -113.34,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top center',
+                    details: '2024 87th Avenue. Essential support asset for Canadian energy sectors. Tel: 780.449.3080'
                 },
                 {
-                    name: 'Gulf Coast Storage & Rotor Facility',
+                    name: 'Houston Service Center & Rotor Facility',
                     city: 'Houston, Texas (USA)',
                     lat: 29.76,
                     lon: -95.36,
-                    type: 'Support',
-                    color: '#EAAA21', // Elliott Yellow
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
                     size: 14,
-                    textposition: 'top left', // Offset from Harahan
-                    details: 'Climate-controlled vertical rotor storage for units up to 40,000 lbs; drone inventory checks.'
+                    textposition: 'top left',
+                    details: '2001 West Sam Houston Parkway North. Climate-controlled vertical rotor storage (up to 40,000 lbs) & drone validation. Tel: 713.984.3800'
+                },
+                {
+                    name: 'Jacksonville Service Center',
+                    city: 'Jacksonville, Florida (USA)',
+                    lat: 30.43,
+                    lon: -81.64,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'bottom right',
+                    details: '10485 Busch Drive North. Comprehensive dynamic balancing and equipment repair. Tel: 904.757.7600'
+                },
+                {
+                    name: 'New Orleans Service & Training Center',
+                    city: 'Harahan, Louisiana (USA)',
+                    lat: 29.97,
+                    lon: -90.37,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'bottom center',
+                    details: '5901 Jefferson Highway. Dual-purpose hands-on technical instruction center and field repair depot. Tel: 504.962.4333'
+                },
+                {
+                    name: 'Pittsburgh Service & Bearing Plant',
+                    city: 'Donora, Pennsylvania (USA)',
+                    lat: 40.18,
+                    lon: -79.85,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'bottom left',
+                    details: '1250 Scott Street Extension. Specialized component manufacturing and localized turbomachinery repair center. Tel: 724.379.5440'
+                },
+                {
+                    name: 'San Francisco Service Center',
+                    city: 'Fairfield, California (USA)',
+                    lat: 38.25,
+                    lon: -122.04,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top left',
+                    details: '2339 Courage Drive, Suite A. Strategic West Coast field servicing core. Tel: 707.746.5933'
+                },
+                {
+                    name: 'Abu Dhabi Service Center',
+                    city: 'Abu Dhabi (UAE)',
+                    lat: 24.47,
+                    lon: 54.36,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top center',
+                    details: 'Khalidiyah Street, Das Tower, Mezzanine Floor Office M1. Middle East commercial support hub. Tel: 971.26.987.999'
+                },
+                {
+                    name: 'Bahrain Service Center',
+                    city: 'Adliya, Kingdom of Bahrain',
+                    lat: 26.21,
+                    lon: 50.59,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'bottom right',
+                    details: 'Dream Building No. 2, Road 2701, Block No. 327. Regional engineering support unit. Tel: 973.1729.3829'
+                },
+                {
+                    name: 'Lachen Service Center',
+                    city: 'Lachen (Switzerland)',
+                    lat: 47.19,
+                    lon: 8.85,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top center',
+                    details: 'Feldstrasse 2, CH-8853. Advanced European administrative and field service base. Tel: 41.55.451.8000'
+                },
+                {
+                    name: 'La Spezia Service Center',
+                    city: 'Aulla (MS), Italy',
+                    lat: 44.21,
+                    lon: 9.97,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'bottom center',
+                    details: 'Zona Industriale N. 1, Frazione Albiano Magra. Southern European engineering node. Tel: 39.0187.41311'
+                },
+                {
+                    name: 'Silchester Depot & Service Center',
+                    city: 'Silchester, Reading (UK)',
+                    lat: 51.35,
+                    lon: -1.08,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top left',
+                    details: 'Unit 11 Easter Park, Benyon Road. Strategic EMEA aftermarket configuration and global parts supply network. Tel: 44.1189.701122'
+                },
+                {
+                    name: 'Saudi Arabia Service Center',
+                    city: 'Dammam (Saudi Arabia)',
+                    lat: 26.42,
+                    lon: 50.10,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top center',
+                    details: 'Amara Bin Ahmer Almazini Street, Eastern Region. Heavily localized service center supporting critical downstream processing plants. Tel: 00966138218080'
+                },
+                {
+                    name: 'Bangalore Service Center & Assembly Plant',
+                    city: 'Bengaluru (India)',
+                    lat: 12.97,
+                    lon: 77.59,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 15,
+                    textposition: 'top center',
+                    details: 'Plot No. 12/3 Abbanakuppe, Bidadi Industrial Area. 5,000 sqm YR steam turbine building floor, mechanical test loop, and servicing arrays. Tel: 91.80.6163.4600'
+                },
+                {
+                    name: 'Indonesia Service Center',
+                    city: 'Karawang, West Java (Indonesia)',
+                    lat: -6.36,
+                    lon: 107.29,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'bottom right',
+                    details: 'Kawasan Industri Surya Cipta, Desa Mulyasari. South East Asian heavy equipment maintenance framework. Tel: 62 21-522-9563'
+                },
+                {
+                    name: 'Singapore Service Center',
+                    city: 'Singapore',
+                    lat: 1.33,
+                    lon: 103.75,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top center',
+                    details: '1A International Business Park, #07-01. Logistics synchronization facility for APAC installations. Tel: 65.6563.6776'
+                },
+                {
+                    name: 'Taiwan Service Center',
+                    city: 'Taichung (Taiwan)',
+                    lat: 24.14,
+                    lon: 120.61,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'bottom center',
+                    details: '1, Road 42, Industrial Zone. Precision maintenance operations. Tel: 886-4-2359-4202'
+                },
+                {
+                    name: 'Tianjin Service Center',
+                    city: 'Tianjin (P.R. China)',
+                    lat: 39.12,
+                    lon: 117.20,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top center',
+                    details: 'No. 258 Huang Hai Road, TEDA. High-capacity ISO 9001 & 14001 overhaul center covering China and East Asia. Tel: 86-22-5985-6688'
+                },
+                {
+                    name: 'Brazil Service Center',
+                    city: 'Piracicaba, São Paulo (Brazil)',
+                    lat: -22.72,
+                    lon: -47.65,
+                    type: 'Service',
+                    color: '#003DA5', // Elliott Blue
+                    size: 14,
+                    textposition: 'top center',
+                    details: 'Rua Abelardo Benedicto Liborio, 105 - Distrito Industrial Uninorte. Dedicated Latin American repair base.'
                 },
                 {
                     name: 'Basingstoke Support Hub (Historic)',
@@ -141,30 +306,8 @@
                     type: 'Repair',
                     color: '#2D2926', // Elliott Black
                     size: 13,
-                    textposition: 'bottom right', // Offset to prevent collision with Silchester
-                    details: 'Company’s historic first international support services hub opened outside the US.'
-                },
-                {
-                    name: 'East Asian Service Center',
-                    city: 'Tianjin (China)',
-                    lat: 39.12,
-                    lon: 117.20,
-                    type: 'Repair',
-                    color: '#2D2926', // Elliott Black
-                    size: 13,
-                    textposition: 'top center',
-                    details: 'Strategic ISO 9001 and 14001 certified repair operations serving China and East Asia.'
-                },
-                {
-                    name: 'Middle East Support Hub',
-                    city: 'Al Khobar (Saudi Arabia)',
-                    lat: 26.28,
-                    lon: 50.21,
-                    type: 'Repair',
-                    color: '#2D2926', // Elliott Black
-                    size: 14,
-                    textposition: 'top center',
-                    details: 'Major localized technical service and repair center supporting regional petrochemical operations.'
+                    textposition: 'bottom right',
+                    details: 'The company’s historic first international support services hub opened outside the US.'
                 }
             ];
 
